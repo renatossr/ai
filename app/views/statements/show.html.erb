@@ -1,8 +1,43 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @statement.name %>
+  <strong>Company:</strong>
+  <%= @statement.company_id %>
+</p>
+
+<p>
+  <strong>Statement type:</strong>
+  <%= @statement.statement_type_id %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @statement.period %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @statement.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @statement.year %>
+</p>
+
+<p>
+  <strong>Pdf file name:</strong>
+  <%= @statement.pdf_file_name %>
+</p>
+
+<p>
+  <strong>Pdf page:</strong>
+  <%= @statement.pdf_page %>
+</p>
+
+<p>
+  <strong>Processed document:</strong>
+  <%= @statement.processed_document %>
 </p>
 
 <%= link_to 'Edit', edit_statement_path(@statement) %> |

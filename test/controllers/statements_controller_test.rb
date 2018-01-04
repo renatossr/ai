@@ -17,7 +17,7 @@ class StatementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create statement" do
     assert_difference('Statement.count') do
-      post statements_url, params: { statement: { name: @statement.name } }
+      post statements_url, params: { statement: { company_id: @statement.company_id, month: @statement.month, pdf_file_name: @statement.pdf_file_name, pdf_page: @statement.pdf_page, period: @statement.period, processed_document: @statement.processed_document, statement_type_id: @statement.statement_type_id, string: @statement.string, year: @statement.year } }
     end
 
     assert_redirected_to statement_url(Statement.last)
@@ -34,7 +34,7 @@ class StatementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update statement" do
-    patch statement_url(@statement), params: { statement: { name: @statement.name } }
+    patch statement_url(@statement), params: { statement: { company_id: @statement.company_id, month: @statement.month, pdf_file_name: @statement.pdf_file_name, pdf_page: @statement.pdf_page, period: @statement.period, processed_document: @statement.processed_document, statement_type_id: @statement.statement_type_id, string: @statement.string, year: @statement.year } }
     assert_redirected_to statement_url(@statement)
   end
 

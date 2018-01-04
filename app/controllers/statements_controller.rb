@@ -69,6 +69,6 @@ class StatementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statement_params
-      params.require(:statement).permit(:name)
+      params.require(:statement).permit(:company_id, :statement_type_id, :period, :month, :year, :pdf_file_name, :pdf_page, :processed_document)
     end
 end

@@ -12,8 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :statement_name %>
+    <%= form.label :company_id %>
+    <%= form.number_field :company_id, id: :statement_company_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :statement_type_id %>
+    <%= form.number_field :statement_type_id, id: :statement_statement_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period %>
+    <%= form.text_field :period, id: :statement_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month %>
+    <%= form.number_field :month, id: :statement_month %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year, id: :statement_year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pdf_file_name %>
+    <%= form.text_field :pdf_file_name, id: :statement_pdf_file_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pdf_page %>
+    <%= form.number_field :pdf_page, id: :statement_pdf_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :processed_document %>
+    <%= form.text_field :processed_document, id: :statement_processed_document %>
   </div>
 
   <div class="actions">

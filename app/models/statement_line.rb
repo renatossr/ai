@@ -1,0 +1,2 @@
+class StatementLine < ApplicationRecord
+end

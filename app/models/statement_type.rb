@@ -1,0 +1,2 @@
+class StatementType < ApplicationRecord
+end

@@ -1,7 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  company_id: 1
+  statement_type_id: 1
+  period: MyString
+  month: 1
+  year: 1
+  pdf_file_name: MyString
+  pdf_page: 1
+  processed_document: MyString
+  string: MyString
 
 two:
-  name: MyString
+  company_id: 1
+  statement_type_id: 1
+  period: MyString
+  month: 1
+  year: 1
+  pdf_file_name: MyString
+  pdf_page: 1
+  processed_document: MyString
+  string: MyString

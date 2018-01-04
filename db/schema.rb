@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104122819) do
+ActiveRecord::Schema.define(version: 20180104155658) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -19,23 +19,36 @@ ActiveRecord::Schema.define(version: 20180104122819) do
   end
 
   create_table "entries", force: :cascade do |t|
-    t.integer "company_id"
+    t.integer "statement_line_id"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statement_lines", force: :cascade do |t|
+    t.integer "statement_id"
     t.string "name"
     t.string "original_name"
-    t.string "period"
-    t.integer "month"
-    t.integer "year"
-    t.integer "value"
-    t.integer "footnote"
-    t.string "pdf_file_name"
-    t.integer "pdf_page"
-    t.string "processed_document"
+    t.string "footnote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "statement_types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "statements", force: :cascade do |t|
-    t.string "name"
+    t.integer "company_id"
+    t.integer "statement_type_id"
+    t.string "period"
+    t.integer "month"
+    t.integer "year"
+    t.string "pdf_file_name"
+    t.integer "pdf_page"
+    t.string "processed_document"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
