@@ -5,5 +5,12 @@
   <%= @company.name %>
 </p>
 
+<p>
+  <strong>Statements</strong> <%= link_to 'New Statement', new_statement_path %>
+  <% @statements.each do |statement| %>
+    <p><%= statement.name %></p>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

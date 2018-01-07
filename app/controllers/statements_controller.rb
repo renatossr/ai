@@ -24,17 +24,22 @@ class StatementsController < ApplicationController
   # POST /statements
   # POST /statements.json
   def create
-    @statement = Statement.new(statement_params)
+    require 'csv'
+    #@statement = Statement.new(statement_params)
+    
+    @uploaded_io = params[:statement][:pdf_file]
+    @arrToShow = StatementTreatment.treat(@uploaded_io)
+    render 'preliminary'
 
-    respond_to do |format|
-      if @statement.save
-        format.html { redirect_to @statement, notice: 'Statement was successfully created.' }
-        format.json { render :show, status: :created, location: @statement }
-      else
-        format.html { render :new }
-        format.json { render json: @statement.errors, status: :unprocessable_entity }
-      end
-    end
+    #respond_to do |format|
+    #  if @statement.save
+    #    format.html { redirect_to @statement, notice: 'Statement was successfully created.' }
+    #    format.json { render :show, status: :created, location: @statement }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @statement.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # PATCH/PUT /statements/1
@@ -69,6 +74,6 @@ class StatementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statement_params
-      params.require(:statement).permit(:company_id, :statement_type_id, :period, :month, :year, :pdf_file_name, :pdf_page, :processed_document)
+      params.require(:statement).permit(:company_id, :pdf_file)
     end
 end

@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <% @arrToShow.each do |line| %>
+  <tr>
+    <% line.each do |item| %>
+    <td><%= item %></td>
+    <% end %>
+  </tr>
+  <% end%>
+</table>

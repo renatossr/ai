@@ -2,4 +2,8 @@
 
 <%= render 'form', statement: @statement %>
 
+<% if @uploaded_io %>
+  <%= @uploaded_io.read %>
+<% end %>
+
 <%= link_to 'Back', statements_path %>

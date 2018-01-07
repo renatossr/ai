@@ -1,3 +1,3 @@
 class Company < ApplicationRecord
-  has_many :entries 
+  has_many :statements
 end
