@@ -8,7 +8,6 @@ class StatementTreatment
     @arr = get_array_from_csv(@uploaded_file)
     
     @statement_type = get_statement_type(@arr)
-    puts 'Statement Type: ' + @statement_type
     
     
     #remove_nil(@arr)
